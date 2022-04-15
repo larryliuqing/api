@@ -316,6 +316,7 @@ func (Disk) SwaggerDoc() map[string]string {
 		"io":                "IO specifies which QEMU disk IO mode should be used.\nSupported values are: native, default, threads.\n+optional",
 		"tag":               "If specified, disk address and its tag will be provided to the guest via config drive metadata\n+optional",
 		"blockSize":         "If specified, the virtual disk will be presented with the given block sizes.\n+optional",
+		"iotune":            "If specified, The iotune element provides the ability to provide additional per-device I/O tuning\n+optional",
 	}
 }
 
@@ -328,6 +329,12 @@ func (CustomBlockSize) SwaggerDoc() map[string]string {
 func (BlockSize) SwaggerDoc() map[string]string {
 	return map[string]string{
 		"": "BlockSize provides the option to change the block size presented to the VM for a disk.\nOnly one of its members may be specified.",
+	}
+}
+
+func (DiskIOTune) SwaggerDoc() map[string]string {
+	return map[string]string{
+		"": "DiskIOTune provides the option to provide additional per-device I/O tuning",
 	}
 }
 
