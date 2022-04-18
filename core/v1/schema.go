@@ -1158,6 +1158,30 @@ type Interface struct {
 	// If specified, the virtual network interface address and its tag will be provided to the guest via config drive
 	// +optional
 	Tag string `json:"tag,omitempty"`
+	// If specified, the virtual network interface allows setting quality of service
+	// +optional
+	BandWidth *BandWidth `json:"bandWidth,omitempty"`
+}
+
+// The quality of service to use in the interface.
+type BandWidth struct {
+	Inbound  Inbound  `json:"inbound,omitempty"`
+	Outbound Outbound `json:"outbound,omitempty"`
+}
+
+// The quality of service Inbound to use in the interface.
+type Inbound struct {
+	Average string `json:"average,attr,omitempty"`
+	Peak    string `json:"peak,attr,omitempty"`
+	Burst   string `json:"burst,attr,omitempty"`
+	Floor   string `json:"floor,attr,omitempty"`
+}
+
+// The quality of service Outbound to use in the interface.
+type Outbound struct {
+	Average string `json:"average,attr,omitempty"`
+	Peak    string `json:"peak,attr,omitempty"`
+	Burst   string `json:"burst,attr,omitempty"`
 }
 
 // Extra DHCP options to use in the interface.

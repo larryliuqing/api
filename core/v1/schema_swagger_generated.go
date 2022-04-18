@@ -627,6 +627,25 @@ func (Interface) SwaggerDoc() map[string]string {
 		"pciAddress":  "If specified, the virtual network interface will be placed on the guests pci address with the specified PCI address. For example: 0000:81:01.10\n+optional",
 		"dhcpOptions": "If specified the network interface will pass additional DHCP options to the VMI\n+optional",
 		"tag":         "If specified, the virtual network interface address and its tag will be provided to the guest via config drive\n+optional",
+		"bandWidth":   "If specified, the virtual network interface allows setting quality of service\n+optional",
+	}
+}
+
+func (BandWidth) SwaggerDoc() map[string]string {
+	return map[string]string{
+		"": "The quality of service to use in the interface.",
+	}
+}
+
+func (Inbound) SwaggerDoc() map[string]string {
+	return map[string]string{
+		"": "The quality of service Inbound to use in the interface.",
+	}
+}
+
+func (Outbound) SwaggerDoc() map[string]string {
+	return map[string]string{
+		"": "The quality of service Outbound to use in the interface.",
 	}
 }
 
