@@ -1171,17 +1171,17 @@ type BandWidth struct {
 
 // The quality of service Inbound to use in the interface.
 type Inbound struct {
-	Average string `json:"average,attr,omitempty"`
-	Peak    string `json:"peak,attr,omitempty"`
-	Burst   string `json:"burst,attr,omitempty"`
-	Floor   string `json:"floor,attr,omitempty"`
+	Average string `json:"average,omitempty"`
+	Peak    string `json:"peak,omitempty"`
+	Burst   string `json:"burst,omitempty"`
+	Floor   string `json:"floor,omitempty"`
 }
 
 // The quality of service Outbound to use in the interface.
 type Outbound struct {
-	Average string `json:"average,attr,omitempty"`
-	Peak    string `json:"peak,attr,omitempty"`
-	Burst   string `json:"burst,attr,omitempty"`
+	Average string `json:"average,omitempty"`
+	Peak    string `json:"peak,omitempty"`
+	Burst   string `json:"burst,omitempty"`
 }
 
 // Extra DHCP options to use in the interface.
