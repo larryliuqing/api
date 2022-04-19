@@ -1171,7 +1171,7 @@ type Inbound struct {
 	Average string `json:"average"`
 	Peak    string `json:"peak,omitempty"`
 	Burst   string `json:"burst,omitempty"`
-	Floor   string `json:"floor"`
+	Floor   string `json:"floor,omitempty"`
 }
 
 // The outbound bandwidth to use in the interface.
